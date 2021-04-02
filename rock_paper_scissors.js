@@ -44,4 +44,36 @@ function playerSelection(){
     return player_election.toLowerCase()
 }
 
-function game(){}
+function game(){
+    let playerWins = 0;
+    let computerWins = 0;
+    let player;
+    let computer;
+    let result;
+
+    for (let i=0; i<5; i++){
+        player = playerSelection();
+        computer = computerPlay();
+        result = playRound(player, computer);
+        
+        if (result.search('win') !== -1){
+            playerWins += 1;
+        }
+        else{
+            computerWins += 1;
+        }
+
+        console.log(result);
+    }
+    
+    if(playerWins > computerWins){
+        console.log('You win! :)')
+    }
+    else if(playerWins < computerWins){
+        console.log('You lose! :(')
+    }
+    else{
+        console.log('You tied!')
+    }
+    return
+}
