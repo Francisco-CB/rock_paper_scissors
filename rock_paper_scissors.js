@@ -8,4 +8,8 @@ function computerSelection(){
     return computer_options[election]
 }
 
-function playerSelection(){}
+function playerSelection(){
+    let player_election;
+    player_election = window.prompt('Rock, Paper, or Scissors?');
+    return player_election.toLowerCase()
+}
